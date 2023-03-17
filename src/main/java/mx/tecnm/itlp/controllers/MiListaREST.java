@@ -61,6 +61,18 @@ public class MiListaREST {
 			return new ResponseEntity<Void>(HttpStatus.CONFLICT);
 		}
 	}
+    
+    @GetMapping("/id")
+    public int buscarPeliculas(@RequestParam int perfiles_usuarios_id){
+    	try {
+    		return  repository.buscarPeliculas(perfiles_usuarios_id);
+    	}catch(Exception e) {
+            return 0;
+
+    	}
+    	
+    }
+    	
+    }
 
 
-}

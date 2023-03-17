@@ -35,5 +35,9 @@ public class MiListaJDBC {
     	conexion.update(sql, pelicula_id, perfil_usuario_id);
     	
     }
+    public int buscarPeliculas(int perfiles_uauarios_id) {
+    	String sql = "SELECT COUNT(*) FROM mi_lista where perfiles_usuarios_id=?";
+    	return conexion.queryForObject(sql, Integer.class, perfiles_uauarios_id);
+    }
 
 }
